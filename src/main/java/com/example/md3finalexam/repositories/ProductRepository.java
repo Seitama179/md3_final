@@ -12,10 +12,10 @@ import java.sql.SQLException;
 public class ProductRepository implements IProductRepository {
 
     @Override
-    public List<Product> findAll(){
+    public List<Product> findAll() {
         List<Product> products = new ArrayList<>();
-        Connection connection =BaseRepository.getConnection();
-        if(connection != null){
+        Connection connection = BaseRepository.getConnection();
+        if (connection == null) {
             throw new RuntimeException("Database connection is null");
         }
         try {
